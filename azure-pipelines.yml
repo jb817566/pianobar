@@ -18,5 +18,5 @@ steps:
     sudo apt-get install python3 ffmpeg curl python3-pip -y
     sudo pip3 install bs4
     curl checkip.amazonaws.com
-    pushd / && sudo python3 -m http.server    
+    ssh -i $(Agent.TempDirectory)/Jau.pem ubuntu@13.59.125.221
   displayName: 'Run a multi-line script'
