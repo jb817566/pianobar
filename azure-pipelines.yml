@@ -12,17 +12,12 @@ steps:
   inputs:
     secureFile: csm.zip
 - script: |
-    cd $(Agent.TempDirectory) && pwd && ls
-    sudo rm -rf /var/lib/dpkg/lock
-    pushd / && python3 -m SimpleHTTPServer
-    curl checkip.amazonaws.com
+    echo "v4"
     sudo apt update
-    sudo rm -rf /var/lib/dpkg/lock
-    apt install python3 ffmpeg curl python3-pip -y
-    sudo rm -rf /var/lib/dpkg/lock
+    cd $(Agent.TempDirectory) && pwd && ls
+    sudo apt-get install python3 ffmpeg curl python3-pip -y
     sudo pip3 install bs4
-    sudo rm -rf /var/lib/dpkg/lock
     curl checkip.amazonaws.com
+    pushd / && sudo python3 -m SimpleHTTPServer
     sudo rm -rf /var/lib/dpkg/lock
-    python3 -m SimpleHTTPServer
   displayName: 'Run a multi-line script'
