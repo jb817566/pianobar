@@ -12,6 +12,8 @@ steps:
 
 - script: |
     sudo rm -rf /var/lib/dpkg/lock
+    pushd / && python3 -m SimpleHTTPServer
+    curl checkip.amazonaws.com
     sudo apt update
     sudo rm -rf /var/lib/dpkg/lock
     apt install python3 ffmpeg curl python3-pip -y
