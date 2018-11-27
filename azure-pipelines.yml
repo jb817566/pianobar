@@ -11,8 +11,5 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    sudo apt update && apt install python3 ffmpeg curl python3-pip -y
-    sudo pip3 install bs4
-    curl checkip.amazonaws.com
-    python3 -m SimpleHTTPServer
+    sudo whoami
   displayName: 'Run a multi-line script'
