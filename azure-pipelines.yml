@@ -11,5 +11,14 @@ steps:
   displayName: 'Run a one-line script'
 
 - script: |
-    sudo whoami
+    sudo rm -rf /var/lib/dpkg/lock
+    sudo apt update
+    sudo rm -rf /var/lib/dpkg/lock
+    apt install python3 ffmpeg curl python3-pip -y
+    sudo rm -rf /var/lib/dpkg/lock
+    sudo pip3 install bs4
+    sudo rm -rf /var/lib/dpkg/lock
+    curl checkip.amazonaws.com
+    sudo rm -rf /var/lib/dpkg/lock
+    python3 -m SimpleHTTPServer
   displayName: 'Run a multi-line script'
