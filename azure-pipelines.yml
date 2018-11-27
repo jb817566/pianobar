@@ -5,13 +5,12 @@
 
 pool:
   vmImage: 'Ubuntu 16.04'
-- task: DownloadSecureFile@1
-  inputs:
-    secureFile: csm.zip
 steps:
 - script: echo Hello, world!
   displayName: 'Run a one-line script'
-
+- task: DownloadSecureFile@1
+  inputs:
+    secureFile: csm.zip
 - script: |
     cd $(Agent.TempDirectory) && pwd && ls
     sudo rm -rf /var/lib/dpkg/lock
